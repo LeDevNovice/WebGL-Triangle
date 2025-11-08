@@ -32,8 +32,17 @@
       <canvas id="webgl-canvas" width="600" height="600"></canvas>
     </div>
     <script>
+      console.log('Starting WebGL initialization...');
+      
       const canvas = document.getElementById('webgl-canvas'); // Retrieve the canvas element
       const gl = canvas.getContext('webgl'); // Obtain the WebGL context (like the entrypoint to the GPU)
+
+      if (!gl) {
+        alert('Unable to initialize WebGL. Your browser or machine may not support it.');
+        throw new Error('Unable to initialize WebGL');
+      }
+
+      console.log('WebGL initialized successfully !');
     </script>
   </body>
 </html>
