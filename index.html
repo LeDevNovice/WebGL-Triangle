@@ -55,11 +55,20 @@
         // This is base information about one vertex that will be passed to the shader
         // vec3 is a variable type that means "This is a 3D vector", a group of 3 numbers. (x, y, z) for position, (r, g, b) for color
         // For this vertex, here is its position and color
-        attribute vec3 aVertexPosition;
+        attribute vec3 aPosition;
         attribute vec3 aColor;
 
-        // Varying is a keyword that means "This is a data that will be passed to the fragment shader"
-        varying vec3 vColor;
+        varying vec3 vColor; // Varying is a keyword that means "This is a data that will be passed to the fragment shader"
+
+        // Main function that will be executed for each vertex
+        // It will be executed 3 times in parallel for each vertex for the triangle rendering
+        void main() {
+          // gl_Position is a GLSL built-in variable that means "This is the final position of the vertex in the 3D space"
+          // This is the main and necessary output of the vertex shader, say to graphics card where to place this vertex in the screen
+          // vec4 is a variable type that means "This is a 4D vector", a group of 4 numbers. (x, y, z, w) for position, (r, g, b, a) for color
+          // 1.0 is the w component, which is call the homogeneous coordinate, it is used to rightfully calculate the perspective projection and other transformations
+          gl_Position = vec4(aPosition, 1.0); 
+        }
       `
     </script>
   </body>
