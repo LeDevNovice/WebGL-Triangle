@@ -32,8 +32,8 @@
       <canvas id="webgl-canvas" width="600" height="600"></canvas>
     </div>
     <script>
-      // Retrieve the canvas element
-      const canvas = document.getElementById('webgl-canvas');
+      const canvas = document.getElementById('webgl-canvas'); // Retrieve the canvas element
+      const gl = canvas.getContext('webgl'); // Obtain the WebGL context (like the entrypoint to the GPU)
     </script>
   </body>
 </html>
