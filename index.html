@@ -50,7 +50,14 @@
       // Vertex shader to define the position of the vertices
       // In WebGL, we need to define the vertices in a specific GLSL (OpenGL Shading Language) format
       // The vertex shader is a program that runs on the GPU for each vertex
-      const vertexShaderSource = ``
+      const vertexShaderSource = `
+        // Attribute is a keyword that means "This is a data coming from the CPU"
+        // This is base information about one vertex that will be passed to the shader
+        // vec3 is a variable type that means "This is a 3D vector", a group of 3 numbers. (x, y, z) for position, (r, g, b) for color
+        // For this vertex, here is its position and color
+        attribute vec3 aVertexPosition;
+        attribute vec3 aColor;
+      `
     </script>
   </body>
 </html>
