@@ -32,6 +32,7 @@
       <canvas id="webgl-canvas" width="600" height="600"></canvas>
     </div>
     <script>
+      /* INIT WEBGL */
       console.log('Starting WebGL initialization...');
       
       const canvas = document.getElementById('webgl-canvas'); // Retrieve the canvas element
@@ -43,6 +44,13 @@
       }
 
       console.log('WebGL initialized successfully !');
+
+      /* SET UP SHADERS */
+      console.log('Setting up shaders...');
+      // Vertex shader to define the position of the vertices
+      // In WebGL, we need to define the vertices in a specific GLSL (OpenGL Shading Language) format
+      // The vertex shader is a program that runs on the GPU for each vertex
+      const vertexShaderSource = ``
     </script>
   </body>
 </html>
