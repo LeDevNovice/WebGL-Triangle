@@ -70,7 +70,7 @@
           gl_Position = vec4(aPosition, 1.0);
           
           vColor = aColor; // Pass the color to the fragment shader. This value will be interpolated between the vertices and used to color the fragment.
-        }`
+        }`;
 
         const fragmentShaderSource = `
           // Precision is a keyword that means "This is the precision of the floating point numbers"
@@ -85,9 +85,13 @@
           // Main function that will be executed for each fragment
           // It will be executed for each pixel of the triangle
           void main() {
-          
+            // gl_FragColor is a GLSL built-in variable that means "This is the final color of the fragment"
+            // 1.0 is the a component, which is call the alpha component, it is used to set the transparency of the fragment
+            gl_FragColor = vec4(vColor, 1.0); // Set the color of the fragment
           }
-        `
+        `;
+
+        console.log("Shaders setup successfully !");
     </script>
   </body>
 </html>
