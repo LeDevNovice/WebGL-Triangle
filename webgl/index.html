@@ -133,19 +133,21 @@
 
         // Define the vertices of the triangle
         // Each vertex is a 3D vector (x, y, z)
-        const positions = [
+        // Float32Array is a typed array that means "This is a 32-bit floating point number"
+        // It is used to store the vertices data in the GPU memory efficiently
+        const positions = new Float32Array([
           -0.5, -0.5, 0.0, // First vertex - bottom left
           0.5, -0.5, 0.0, // Second vertex - bottom right
           0.0, 0.5, 0.0, // Third vertex - top center
-        ]
+        ]);
 
         // Define the colors of the vertices
         // Each color is a 3D vector (r, g, b)
-        const colors = [
+        const colors = new Float32Array([
           1.0, 0.0, 0.0, // First vertex - red
           0.0, 1.0, 0.0, // Second vertex - green
           0.0, 0.0, 1.0, // Third vertex - blue
-        ]
+        ]);
     </script>
   </body>
 </html>
