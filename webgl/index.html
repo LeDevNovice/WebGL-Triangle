@@ -149,6 +149,16 @@
           0.0, 1.0, 0.0, // Second vertex - green
           0.0, 0.0, 1.0, // Third vertex - blue
         ]);
+
+        /* CREATE VERTEX BUFFER */
+        console.log("Creating vertex buffer...");
+
+        // A vertex buffer is a memory space on the GPU that will store the vertices data
+        const positionBuffer = gl.createBuffer(); // We need to create a new buffer object that will store the vertices positiondata
+        gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer); // We need to bind the buffer object to the ARRAY_BUFFER target, make it the current buffer object
+        // STATIC_DRAW is a hint to the GPU that the data will not change and will be used for rendering only
+        // It allows the GPU to store the data in the faster memory location of the GPU.
+        gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW); // We need to send the vertices data to the buffer
     </script>
   </body>
 </html>
