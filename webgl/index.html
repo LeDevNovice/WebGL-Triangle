@@ -92,6 +92,15 @@
         `;
 
         console.log("Shaders setup successfully !");
+
+        /* COMPILE SHADERS */
+        function compileShader(gl, source, type) {
+          console.log(`Compiling ${type === gl.VERTEX_SHADER ? 'vertex' : 'fragment'} shader...`);
+
+          // type is a keyword that means "This is the type of the shader"
+          // We tell the GPU that we want him to create a memory space for a shader of a specific type
+          const shader = gl.createShader(type); // Create a new shader object
+        }
     </script>
   </body>
 </html>
