@@ -132,7 +132,8 @@
         console.log("Setting up vertex data...");
 
         // Define the vertices of the triangle
-        // Each vertex is a 3D vector (x, y, z)
+        // Each vertex is a 3D vector (x, y, z).
+        // Clip space is the coordinate system of the viewport. It is a square between -1 and 1.
         // Float32Array is a typed array that means "This is a 32-bit floating point number"
         // It is used to store the vertices data in the GPU memory efficiently
         const positions = new Float32Array([
