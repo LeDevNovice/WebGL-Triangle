@@ -70,8 +70,24 @@
           gl_Position = vec4(aPosition, 1.0);
           
           vColor = aColor; // Pass the color to the fragment shader. This value will be interpolated between the vertices and used to color the fragment.
-        }
-      `
+        }`
+
+        const fragmentShaderSource = `
+          // Precision is a keyword that means "This is the precision of the floating point numbers"
+          // mediump is a precision level that means "This is a medium precision floating point number"
+          // float is a variable type that means "This is a floating point number"
+          // This is a technical detail needed in fragment shader
+          precision mediump float;
+
+          // Receives the color from the vertex shader
+          varying vec3 vColor;
+
+          // Main function that will be executed for each fragment
+          // It will be executed for each pixel of the triangle
+          void main() {
+          
+          }
+        `
     </script>
   </body>
 </html>
