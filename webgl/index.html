@@ -112,6 +112,21 @@
 
         const vertexShader = compileShader(gl, vertexShaderSource, gl.VERTEX_SHADER);
         const fragmentShader = compileShader(gl, fragmentShaderSource, gl.FRAGMENT_SHADER);
+
+        /* CREATE GPU PROGRAM */
+        console.log("Creating GPU program...");
+
+        // A GPU Program is a combination of a vertex shader and a fragment shader
+        const program = gl.createProgram(); // Create a new program object
+
+        gl.attachShader(program, vertexShader); // Attach the vertex shader to the program
+        gl.attachShader(program, fragmentShader); // Attach the fragment shader to the program
+
+        gl.linkProgram(program); // Link the program (combine the vertex shader and the fragment shader)
+
+        gl.useProgram(program); // Use the program (tell the GPU to use the program)
+
+        console.log("GPU program created successfully !");
     </script>
   </body>
 </html>
