@@ -67,7 +67,9 @@
           // This is the main and necessary output of the vertex shader, say to graphics card where to place this vertex in the screen
           // vec4 is a variable type that means "This is a 4D vector", a group of 4 numbers. (x, y, z, w) for position, (r, g, b, a) for color
           // 1.0 is the w component, which is call the homogeneous coordinate, it is used to rightfully calculate the perspective projection and other transformations
-          gl_Position = vec4(aPosition, 1.0); 
+          gl_Position = vec4(aPosition, 1.0);
+          
+          vColor = aColor; // Pass the color to the fragment shader. This value will be interpolated between the vertices and used to color the fragment.
         }
       `
     </script>
