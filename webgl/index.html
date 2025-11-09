@@ -202,7 +202,22 @@
 
         console.log("Buffers connected to shader successfully !");
         
-        
+        /* RENDER CONFIGURATION */
+        console.log("Configuring screen and viewport...");
+
+        // clearColor is a function that is used to set the background color of the screen
+        gl.clearColor(0.1, 0.1, 0.15, 1.0); // Set the background color of the screen to a dark gray
+        gl.viewport(0, 0, canvas.width, canvas.height); // Set the viewport to the size of the canvas
+
+        console.log("Screen and viewport configured successfully !");
+
+        /* RENDER LOOP (DRAW CALL) */
+        console.log("Starting rendering...");
+
+        gl.clear(gl.COLOR_BUFFER_BIT); // Clear the screen with the background color
+        gl.drawArrays(gl.TRIANGLES, 0, 3); // Draw the triangle
+
+        console.log("Rendering completed successfully !");
     </script>
   </body>
 </html>
