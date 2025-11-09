@@ -168,6 +168,41 @@
 
         /* CONNECT BUFFER TO SHADER */
         console.log("Connecting buffer to shader...");
+
+        // Get the location of the attribute in the shader
+        const aPosistionLocation = gl.getAttribLocation(program, "aPosition");
+
+        gl.enableVertexAttribArray(aPosistionLocation); // Activate the attribute
+        gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer); // Bind the buffer to the attribute
+        
+        // vertexAttribPointer is a function that is used to connect the buffer to the attribute
+        // It is used to tell the GPU how to interpret the data in the buffer and how to use it in the shader
+        gl.vertexAttribPointer(
+          aPosistionLocation, // The location of the attribute in the shader
+          3, // The number of components per attribute (x, y, z = 3)
+          gl.FLOAT, // The type of the attribute (FLOAT = 32-bit floating point number)
+          false, // Whether the attribute is normalized.
+          0, // Spacing between the components of the attribute.
+          0 // Offset of the first component of the attribute.
+        );
+
+        const aColorLocation = gl.getAttribLocation(program, "aColor");
+
+        gl.enableVertexAttribArray(aColorLocation);
+        gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+
+        gl.vertexAttribPointer(
+          aColorLocation,
+          3,
+          gl.FLOAT,
+          false,
+          0,
+          0
+        );
+
+        console.log("Buffers connected to shader successfully !");
+        
+        
     </script>
   </body>
 </html>
