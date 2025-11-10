@@ -37,6 +37,37 @@ console.log("Setting up renderer...");
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#threejs-canvas"),
   antialias: true, // Enable anti-aliasing to smooth the edges of the shapes
-})
+});
 
 renderer.setSize(600, 600); // Set the size of the renderer to the size of the canvas
+
+console.log("Renderer created successfully !");
+
+/* SET UP GEOMETRY */
+console.log("Setting up geometry...");
+
+// A geometry is a shape that will be rendered on the screen
+// BufferGeometry is a geometry that will store the vertices data in the GPU memory
+// In WebGL, we need to create a buffer object and send the vertices data to the buffer object
+const geometry = new THREE.BufferGeometry(); // Create a new geometry object
+
+// Define the vertices of the triangle
+// Exactly the same as the vertices data in WebGL
+const positions = new Float32Array([
+  -0.5, -0.5, 0.0, 0.5, -0.5, 0.0, 0.0, 0.5, 0.0,
+]);
+
+// Set the positions attribute to the geometry
+geometry.setAttribute(
+  "position",
+  new THREE.BufferAttribute(positions, 3)
+  // 3 is the number of components per attribute (x, y, z)
+); // Create a new buffer attribute object and set the positions attribute to the geometry
+
+// Define the colors of the vertices
+const colors = new Float32Array([1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]);
+
+// Set the colors attribute to the geometry
+geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+
+console.log("Geometry created successfully !");
