@@ -31,6 +31,14 @@
     <div id="container">
         <canvas id="threejs-canvas"></canvas>
     </div>
-    <script src="./main.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.181.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.181.0/examples/jsm/"
+        }
+      }
+      </script>
+    <script src="main.js" type="module"></script>
 </body>
 </html>
