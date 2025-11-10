@@ -71,3 +71,29 @@ const colors = new Float32Array([1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]);
 geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
 console.log("Geometry created successfully !");
+
+/* SET UP MATERIAL */
+console.log("Setting up material...");
+
+// A material is a object that will be used to color the geometry
+// MeshBasicMaterial is a material that will color the geometry with a single color without any lighting
+const material = new THREE.MeshBasicMaterial({
+  vertexColors: true, // Use the colors of the vertices to color the mesh
+});
+
+console.log("Material created successfully !");
+
+/* SET UP MESH */
+console.log("Setting up mesh...");
+
+const triangle = new THREE.Mesh(geometry, material); // Create a new mesh object
+
+scene.add(triangle); // Add the mesh to the scene
+
+console.log("Mesh created successfully !");
+
+function render() {
+  renderer.render(scene, camera);
+}
+
+render();
