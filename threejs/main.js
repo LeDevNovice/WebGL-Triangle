@@ -29,3 +29,14 @@ const camera = new THREE.OrthographicCamera(
 camera.position.z = 1; // Set the position of the camera to the front of the scene
 
 console.log("Camera created successfully !");
+
+/* SET UP RENDERER */
+console.log("Setting up renderer...");
+
+// A renderer is a device that will render the scene and project it onto the screen
+const renderer = new THREE.WebGLRenderer({
+  canvas: document.querySelector("#threejs-canvas"),
+  antialias: true, // Enable anti-aliasing to smooth the edges of the shapes
+})
+
+renderer.setSize(600, 600); // Set the size of the renderer to the size of the canvas
