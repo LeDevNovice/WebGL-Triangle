@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>My first three.js app</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Triangle</title>
     <style>
-      body { margin: 0; }
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        #container {
+            text-align: center;
+        }
+        
+        canvas {
+            border: 3px solid white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border-radius: 8px;
+        }
     </style>
-  </head>
-  <body>
-    <script type="module" src="/main.js"></script>
-  </body>
+</head>
+<body>
+    <div id="container">
+        <canvas id="threejs-canvas"></canvas>
+    </div>
+    <script src="main.js"></script>
+</body>
 </html>
